@@ -37,11 +37,11 @@ function onePair(hand) {
 }
 
 module.exports = {
-    straightFlush,
+    // straightFlush,
     // fourOfAKind,
     // fullHouse,
-    flush,
-    straight,
+    // flush,
+    // straight,
     // threeOfAKind,
     // twoPair,
     // onePair

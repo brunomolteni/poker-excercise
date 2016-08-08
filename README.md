@@ -44,11 +44,15 @@ See the [Wikipedia List of Poker Hands](https://en.wikipedia.org/wiki/List_of_po
 
 The unit tests use the [Mocha](https://mochajs.org/) test framework and [Chai](http://chaijs.com/api/bdd/) assertion library.
 
+This project includes the [Lodash](https://lodash.com/docs) utility library. Do not use any other dependencies.
+
 ## Instructions
 
 1. Fork and clone this repository.
 1. Run `npm install`.
 1. Install mocha globally by running `npm install -g mocha`.
-1. Implement poker hand validators for *at least 3* hand types (see stubs in `src/poker.js`).
+1. Implement poker hand validators for (see stubs in `src/validator.js`):
+  * *At least one of*: `flush`, `onePair`, `twoPair`, `threeOfAKind`, `fourOfAKind`
+  * And *at least two of*: `straight`, `fullHouse`, `straightFlush`
 1. Uncomment the export lines for the validators you implemented at the bottom of the file.
 1. Run the commmand `mocha` from the root of the project to run the tests. All tests should pass.  
