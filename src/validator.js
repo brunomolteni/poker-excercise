@@ -1,5 +1,7 @@
 "use strict";
 
+const _ = require('lodash');
+
 function throwNotImplemented() {
     throw new Error('Not implemented');
 }
