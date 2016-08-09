@@ -58,8 +58,7 @@ describe('helper', () => {
 
             let result = helper.testEntry({ hand, valid: true }, () => iterations++ === 0);
             expect(result).not.to.be.true;
-            expect(result).to.have.property('originalHand', hand);
-            expect(result).to.have.all.keys('originalHand', 'hand', 'pass', 'expected');
+            expect(result).to.be.string;
 
         });
 

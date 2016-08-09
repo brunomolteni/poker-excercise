@@ -41,7 +41,13 @@ function testEntry(entry, comparer, iterations = 5) {
 
     });
 
-    return _.find(results, result => !result.pass) || true;
+    let failingResult = _.find(results, result => !result.pass);
+
+    if (failingResult === undefined) {
+        return true;
+    }
+
+    return `${comparer.name} returned ${failingResult.pass} for hand ${failingResult.hand} (originally ${failingResult.originalHand}), but it should have been ${failingResult.expected}.`;
 }
 
 function test(handType, comparer) {

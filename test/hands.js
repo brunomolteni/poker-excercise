@@ -34,6 +34,7 @@ module.exports = {
     threeOfAKind: [
         entry('3h3c3d2s4s', true),
         entry('3h3c3d2s2d', false), // is a "full house"
+        entry('4c4d4h4s5h', false), // is "four of a kind"
         entry('3h3c2s6dAs', false)
     ],
     twoPair: [
@@ -43,7 +44,9 @@ module.exports = {
     ],
     onePair: [
         entry('3h3c2s8h0c', true),
-        entry('3h3c2s2d8h', true), // is a "two pair"
+        entry('3h3c2s2d8h', false), // is a "two pair"
+        entry('3h3c3d2s4s', false), // is a "three of a kind"
+        entry('4c4d4h4s5h', false), // is "four of a kind"
         entry('3h8d9c0sAc', false)
     ]
 };
