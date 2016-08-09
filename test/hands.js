@@ -1,52 +1,87 @@
 "use strict";
 
-function entry(hand, valid) {
-    return { hand, valid };
-}
-
 module.exports = {
-    straightFlush: [
-        entry('Jc0c9c8c7c', true),
-        entry('Jc0h9d8c7d', false),
-        entry('3c2cAcKcQc', false),
-        entry('AdKdQdJd0d', true)
-    ],
-    fourOfAKind: [
-        entry('4c4d4h4s5h', true),
-        entry('AcAdAhAs5h', true),
-        entry('4c4d4h3s5h', false)
-    ],
-    fullHouse: [
-        entry('4c4d4h2s2c', true),
-        entry('4c4d3h2s2c', false)
-    ],
-    flush: [
-        entry('2c7cJcQc3c', true),
-        entry('2c3d4h5c6s', false)
-    ],
-    straight: [
-        entry('Ah2d3s4h5c', true),
-        entry('Ah2h3h4h5h', false), // is a "straight flush", not a flush
-        entry('JcQdKhAs2c', false), // no "wrapping around" - aces can be high (>K) or low (<2), but not both
-        entry('4c5d6s7h8s', true),
-        entry('0cJdQhKsAs', true)
-    ],
-    threeOfAKind: [
-        entry('3h3c3d2s4s', true),
-        entry('3h3c3d2s2d', false), // is a "full house"
-        entry('4c4d4h4s5h', false), // is "four of a kind"
-        entry('3h3c2s6dAs', false)
-    ],
-    twoPair: [
-        entry('3h3c2s2d8h', true),
-        entry('3h3c3d2s4s', false), // is a "three of a kind"
-        entry('2h3c3d7h0s', false)  // is a "one pair"
-    ],
-    onePair: [
-        entry('3h3c2s8h0c', true),
-        entry('3h3c2s2d8h', false), // is a "two pair"
-        entry('3h3c3d2s4s', false), // is a "three of a kind"
-        entry('4c4d4h4s5h', false), // is "four of a kind"
-        entry('3h8d9c0sAc', false)
-    ]
+    straightFlush: {
+        valid: [
+            'Jc0c9c8c7c',
+            'AdKdQdJd0d',
+            'Ad2d3d4d5d'
+        ],
+        invalid: [
+            'Jc0h9d8c7d',
+            '3c2cAcKcQc'
+        ]
+    },
+    fourOfAKind: {
+        valid: [
+            '4c4d4h4s5h',
+            'AcAdAhAs5h'
+        ],
+        invalid: [
+            '4c4d4h3s5h',
+            '4c4d7h3s5h'
+        ]
+    },
+    fullHouse: {
+        valid: [
+            '4c4d4h2s2c',
+            'AhAdAsQhQs'
+        ],
+        invalid: [
+            '4c4d3h2s2c',
+            '4c4d4hQs2c'
+        ]
+    },
+    flush: {
+        valid: [
+            '2c7cJcQc3c'
+        ],
+        invalid: [
+            '2c3d4h5c6s',
+            '2c7cJcQc3h',
+            '2h7cJcQc3c'
+        ]
+    },
+    straight: {
+        valid: [
+            'Ah2d3s4h5c',
+            '4c5d6s7h8s',
+            '0cJdQhKsAs'
+        ],
+        invalid: [
+            'Ah2h3h4h5h', // is a "straight flush", not a flush
+            'JcQdKhAs2c'  // no "wrapping around" - aces can be high (>K) or low (<2), but not both
+        ]
+    },
+    threeOfAKind: {
+        valid: [
+            '3h3c3d2s4s',
+            'AsAhAd3dQh'
+        ],
+        invalid: [
+            '3h3c3d2s2d', // is a "full house"
+            '4c4d4h4s5h', // is "four of a kind"
+            '3h3c2s6dAs'
+        ]
+    },
+    twoPair: {
+        valid: [
+            '3h3c2s2d8h'
+        ],
+        invalid: [
+            '3h3c3d2s4s', // is a "three of a kind"
+            '2h3c3d7h0s'  // is a "one pair"
+        ]
+    },
+    onePair: {
+        valid: [
+            '3h3c2s8h0c'
+        ],
+        invalid: [
+            '3h3c2s2d8h', // is a "two pair"
+            '3h3c3d2s4s', // is a "three of a kind"
+            '4c4d4h4s5h', // is "four of a kind"
+            '3h8d9c0sAc'
+        ]
+    }
 };

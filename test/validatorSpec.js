@@ -14,7 +14,13 @@ describe('validator', () => {
 
             it(`should match valid ${handType} hands`, () => {
 
-                expect(helper.test(handType, validator[handType])).to.be.true;
+                expect(helper.test(handType, validator[handType], true)).to.be.true;
+
+            });
+
+            it(`should not match invalid ${handType} hands`, () => {
+
+                expect(helper.test(handType, validator[handType], false)).to.be.true;
 
             });
 

@@ -50,13 +50,15 @@ function testEntry(entry, comparer, iterations = 5) {
     return `${comparer.name} returned ${failingResult.pass} for hand ${failingResult.hand} (originally ${failingResult.originalHand}), but it should have been ${failingResult.expected}.`;
 }
 
-function test(handType, comparer) {
+function test(handType, comparer, valid) {
 
     if (!hands.hasOwnProperty(handType)) {
         throw new Error(`Couldn't find entries for ${handType}.`);
     }
 
-    let results = _.map(hands[handType], entry => testEntry(entry, comparer));
+    let validityKey = valid ? 'valid' : 'invalid';
+
+    let results = _.map(hands[handType][validityKey], hand => testEntry({ hand, valid }, comparer));
 
     return _.find(results, result => result !== true) || true;
 
