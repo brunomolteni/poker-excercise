@@ -50,7 +50,8 @@ module.exports = {
         ],
         invalid: [
             'Ah2h3h4h5h', // is a "straight flush", not a flush
-            'JcQdKhAs2c'  // no "wrapping around" - aces can be high (>K) or low (<2), but not both
+            'JcQdKhAs2c', // no "wrapping around" - aces can be high (>K) or low (<2), but not both
+            '2c2d2s6c6s'  // full house
         ]
     },
     threeOfAKind: {
