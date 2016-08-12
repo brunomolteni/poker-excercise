@@ -53,4 +53,5 @@ This project includes the [Lodash](https://lodash.com/docs) utility library. Do 
 1. Install mocha globally by running `npm install -g mocha`.
 1. Implement poker hand validators for (see stubs in `src/validator.js`) *at least one of*: `flush`, `onePair`, `twoPair`, `threeOfAKind`, `fourOfAKind`, and *at least two of*: `straight`, `fullHouse`, `straightFlush`
 1. Uncomment the export lines for the validators you implemented at the bottom of the file.
-1. Run the commmand `mocha` from the root of the project to run the tests. All tests should pass.  
+1. Run the commmand `mocha` from the root of the project to run the tests. All tests should pass. 
+1. Once completed, replay all to the e-mail you received and attach the content of your `validator.js` as a `.txt` file.   
