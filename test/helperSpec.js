@@ -12,7 +12,7 @@ describe('helper', () => {
         it('should return an array containing the cards in the hand', () => {
 
             let hand = '2c3c4c5c6c';
-            let handCards = helper.cards(hand, 2);
+            let handCards = helper.cards(hand);
 
             expect(handCards[0]).to.equal('2c');
             expect(handCards[1]).to.equal('3c');
